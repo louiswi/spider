@@ -1,7 +1,7 @@
 #####_urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False,context=None)_
 
 Open the URL _url_, which can be either a string or a [Request](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request) object.
-打开一个名为_url_的URL(Uniform Resource Locator:统一资源定位符),url可以是一个字符串或者一个[urllib.request.Request](#urllib.request.Request)对象.   
+打开一个名为_url_的URL(Uniform Resource Locator:统一资源定位符),url可以是一个字符串或者一个[urllib.request.Request](#Request)对象.   
 
 _data_ must be a bytes object specifying additional data to be sent to the server, or `None` if no such data is needed. _data_ may also be an iterable object and in that case Content-Length value must be specified in the headers. Currently HTTP requests are the only ones that use data; the HTTP request will be a POST instead of a GET when the data parameter is provided.  
 _data_必须是指定要发送给服务器的额外bytes object(一串由0到255之间的数字组成的序列叫做bytes对象),或者`None`(若不需要这样的数据的话)._data_还可以是可迭代对象,这种情况下,必须在headers中明确指出Content-Length(在entity-header field中，它指出entity-body大小，[w3](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)参考)的值.目前,仅有HTTP请求使用_data_;如果_data_参数被提供,HTTP请求将会使用POST方法而不是GET方法.  
@@ -54,7 +54,7 @@ _New in version 3.2:_ _data_ can be an iterable object.
 _Changed in version 3.3:_ _cadefault_ was added.  
 _Changed in version 3.4.3:_ _context_ was added.  
 
-#####_class urllib.request.Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)_
+#####<a id="Request">_class urllib.request.Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)_</a>
 
 This class is an abstraction of a URL request.  
 这个类是一个关于URL请求的抽象.  
