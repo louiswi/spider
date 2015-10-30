@@ -65,15 +65,21 @@ _url_应该包含一个有效的URL字符串.
 _data_解释与_urllib.request.openurl()_部分相同,点[这里!!]()查看详细介绍.  
 
 _headers_ should be a dictionary, and will be treated as if [add_header()](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request.add_header) was called with each key and value as arguments. This is often used to “spoof” the `User-Agent` header, which is used by a browser to identify itself – some HTTP servers only allow requests coming from common browsers as opposed to scripts. For example, Mozilla Firefox may identify itself as `"Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11"`, while [urllib](https://docs.python.org/3/library/urllib.html#module-urllib)‘s default user agent string is `"Python-urllib/2.6"` (on Python 2.6).  
+_headers_应该是一个dictionary,使用它就像以每个key and value作为说明调用[urllib.request.Request.add_header()!!]()一样.它经常被用来“欺骗”被浏览器用作识别本身的`User-Agent`头——一些HTTP服务器仅允许来自相对于脚本来说的普通浏览器请求.例如,Mozilla Firefox可以使用`"Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11"`识别自己,然而`urllib`默认的user agent字符串是`"Python-urllib/2.6"`(on Python2.6).  
 
 An example of using `Content-Type` header with _data_ argument would be sending a dictionary like `{"Content-Type":" application/x-www-form-urlencoded;charset=utf-8"}`.  
+一个使用带有_data_说明的`Content-Type`头例子将发送一个像这样`{"Content-Type":" application/x-www-form-urlencoded;charset=utf-8"}`的字典.  
 
 The final two arguments are only of interest for correct handling of third-party HTTP cookies:  
 _origin\_req\_host_ should be the request-host of the origin transaction, as defined by [RFC 2965](http://tools.ietf.org/html/rfc2965.html). It defaults to `http.cookiejar.request_host(self)`. This is the host name or IP address of the original request that was initiated by the user. For example, if the request is for an image in an HTML document, this should be the request-host of the request for the page containing the image.  
+最后两点说明是正确操作第三方HTTP cookies的注意项:  
+_origin\_req\_host_应该是the request-host of the origin transaction,在[RFC 2965](http://tools.ietf.org/html/rfc2965.html)中定义.它默认为`http.cookiejar.request_host(self)`.这是先前由用户发起的原请求的主机名或IP地址.例如,如果该请求是针对HTML文档中的图像,这应该是包含图像的网页请求的request-host机为.  
 
 _unverifiable_ should indicate whether the request is unverifiable, as defined by RFC 2965. It defaults to `False`. An _unverifiable_ request is one whose URL the user did not have the option to approve. For example, if the request is for an image in an HTML document, and the user had no option to approve the automatic fetching of the image, this should be true.  
+_unverifiable_表明该请求是否是无法核实的,在RFC 2965中定义.默认值为`False`.一个无法证实的请求是指其URL无法被使用者验证的.例如,如果该请求是针对HTML文档中的图像,并且用户无法自动抓取图像,它应该为True.  
 
 _method_ should be a string that indicates the HTTP request method that will be used (e.g. `'HEAD'`). If provided, its value is stored in the [method](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request.method) attribute and is used by [get_method()](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request.get_method). Subclasses may indicate a default method by setting the [_method_](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request.method) attribute in the class itself.
+_method_应该是一个说明使用哪种HTTP请求方法的字符串(例如,`'HEAD').如果提供该字符串,它的值被存储在[method!!]()属性中,并且被用于[get_method()!!]()函数.通过在类本身中设置[method!!]()属性,子类可以声明默认的方法.  
 
 _Changed in version 3.3:_ [Request.method](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request.method) argument is added to the Request class.
 
