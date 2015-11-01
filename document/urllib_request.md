@@ -1,6 +1,6 @@
 #####_urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False,context=None)_
 
-Open the URL _url_, which can be either a string or a [Request](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request) object.
+Open the URL _url_, which can be either a string or a [Request](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request) object.  
 打开一个名为_url_的URL(Uniform Resource Locator:统一资源定位符),url可以是一个字符串或者一个[urllib.request.Request](#Request)对象.   
 
 _data_ must be a bytes object specifying additional data to be sent to the server, or `None` if no such data is needed. _data_ may also be an iterable object and in that case Content-Length value must be specified in the headers. Currently HTTP requests are the only ones that use data; the HTTP request will be a POST instead of a GET when the data parameter is provided.  
@@ -25,7 +25,7 @@ The _cadefault_ parameter is ignored.
 忽略_cadefault_参数.  
 
 For http and https urls, this function returns a [http.client.HTTPResponse](https://docs.python.org/3/library/http.client.html#http.client.HTTPResponse) object which has the following [_HTTPResponse Objects_](https://docs.python.org/3/library/http.client.html#httpresponse-objects) methods.   
-对于http与https url而言,该函数会返回一个遵守[_HTTPResponse Objects_!!]()方法的_http.client.HTTPResponse_对象.  
+对于http与https url而言,该函数会返回一个遵守[_HTTPResponse Objects_](https://github.com/time-river/spider/blob/master/document/HTTPResponseObjects.md)方法的_http.client.HTTPResponse_对象.  
 
 For ftp, file, and data urls and requests explicitly handled by legacy [URLopener](https://docs.python.org/3/library/urllib.request.html#urllib.request.URLopener) and [FancyURLopener](https://docs.python.org/3/library/urllib.request.html#urllib.request.FancyURLopener) classes, this function returns a _urllib.response.addinfourl_ object which can work as [_context manager_](https://docs.python.org/3/glossary.html#term-context-manager) and has methods such as
 　geturl() — return the URL of the resource retrieved, commonly used to determine if a redirect was followed  
