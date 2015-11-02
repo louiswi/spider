@@ -7,7 +7,7 @@ The following exceptions are raised by [urllib.error](https://docs.python.org/3/
 下列异常由_urllib.error_提出:(as appropriate: 酌情, 可不译)  
 
 ####_exception urllib.error.URLError_  
-The handlers raise this exception (or derived exceptions) when they run into a problem. It is a subclass of OSError.  
+The handlers raise this exception (or derived exceptions) when they run into a problem. It is a subclass of [OSError](https://docs.python.org/3/library/exceptions.html#OSError).  
 当handlers遇到问题, 会引发这些异常(或者派生的异常). 他是_OSError_的子类.  
 
 #####_reason_  
